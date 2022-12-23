@@ -13,7 +13,7 @@ const search = document.getElementById("search");
 async function getMovie(url) {
     const resp = await fetch(url);
     const respData = await resp.json();
-
+    console.log(respData)
     showMovies(respData.results)
 };
 
@@ -23,21 +23,22 @@ function showMovies(movies) {
     main.innerHTML = "";
 
     movies.forEach((movie) => {
-        const { backdrop_path, title, vote_average, overview } = movie;
+        const { poster_path, title, vote_average, overview } = movie;
 
         const movieEl = document.createElement("div");
         movieEl.classList.add("movie");
 
-        movieEl.innerHTML = `
+        movieEl.innerHTML =
+            `
                 <img
-                    src="${IMGPATH + backdrop_path}"
+                    src="${IMGPATH + poster_path}"
                     alt="${title}"
                 />
                 <div class="movie-info">
                     <h3>${title}</h3>
                     <span class="${getClassByRate(
-            vote_average
-        )}">${vote_average}</span>
+                vote_average
+            )}">${vote_average}</span>
                 </div>
                 <div class="overview">
                     <h3>Overview:</h3>
