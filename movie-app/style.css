@@ -14,7 +14,12 @@ header {
   background-color: #373b69;
   padding: 1.5rem;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+}
+
+header i {
+  font-size: 2rem;
+  color: #c4c867;
 }
 
 .search {
