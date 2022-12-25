@@ -1,3 +1,7 @@
+:root {
+  --ff-main: "Oswald", sans-serif;
+}
+
 #canvas1 {
   position: absolute;
   height: 600px;
@@ -6,4 +10,29 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+label {
+  font-family: var(--ff-main);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+select {
+  border: 4px solid #111;
+  border-radius: 5px;
+  align-self: center;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
 }

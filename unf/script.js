@@ -1,3 +1,15 @@
+// Player State
+
+let playerState = "idle";
+const dropDown = document.getElementById("animations");
+
+dropDown.addEventListener("change", (e) => {
+    playerState = e.target.value;
+})
+
+
+// Canvas Settings
+
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 
@@ -10,10 +22,9 @@ playerImage.src = 'shadow_dog.png';
 const spriteWidth = 575;
 const spriteHeight = 523;
 
-let gameFrame = 0;
-const staggerFrame = 5;
 
-const spriteAnimation = [];
+//Animation Object
+
 const animationState = [
     {
         name: 'idle',
@@ -57,6 +68,10 @@ const animationState = [
     }
 ];
 
+// Calculating position for x-coordinates and y-coordinates
+
+const spriteAnimation = [];
+
 animationState.forEach((state, index) => {
     let frames = {
         loc: [],
@@ -69,15 +84,19 @@ animationState.forEach((state, index) => {
     spriteAnimation[state.name] = frames;
 });
 
-console.log(spriteAnimation);
+// Starting frames and frames Delay
 
+let gameFrame = 0;
+const staggerFrame = 5;
+
+animate();
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-    let position = Math.floor(gameFrame / staggerFrame) % spriteAnimation["ko"].loc.length;
-    let frameX = spriteAnimation["ko"].loc[position].x;
-    let frameY = spriteAnimation["ko"].loc[position].y;
+    let position = Math.floor(gameFrame / staggerFrame) % spriteAnimation[playerState].loc.length;
+    let frameX = spriteAnimation[playerState].loc[position].x;
+    let frameY = spriteAnimation[playerState].loc[position].y;
 
 
     ctx.drawImage(playerImage, frameX, frameY, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
@@ -86,4 +105,5 @@ function animate() {
     requestAnimationFrame(animate);
 };
 
-animate();
+
+
