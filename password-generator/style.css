@@ -56,7 +56,7 @@ h1 {
   padding: 1rem;
 }
 
-#copy {
+.copy {
   border: none;
   background-color: transparent;
   color: #fff;
@@ -64,7 +64,7 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translateY(-50%);
+  transform: translate(-20%, -50%);
   cursor: pointer;
 }
 
@@ -89,4 +89,13 @@ h1 {
 
 #generate:hover {
   color: #fff;
+}
+
+.clipboard {
+  position: absolute;
+  bottom: 0;
+  background-color: #063939;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
 }

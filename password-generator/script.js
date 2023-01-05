@@ -7,7 +7,7 @@ const numberEl = document.getElementById('number')
 const symbolEl = document.getElementById('symbol')
 const generateEl = document.getElementById('generate')
 
-
+const clipboardEl = document.getElementById('clipboard')
 
 const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
@@ -32,7 +32,6 @@ function symbol() {
     return symbols[Math.floor(Math.random() * symbols.length)]
 }
 
-
 function generatePassword() {
     const length = lengthEl.value;
     let password = '';
@@ -49,6 +48,7 @@ function generatePassword() {
     }
 
 }
+
 
 generateEl.addEventListener('click', generatePassword)
 
@@ -76,4 +76,15 @@ function generateX() {
 
 copyEl.addEventListener('click', () => {
     navigator.clipboard.writeText(pwEl.innerText);
+
+    clipboardEl.innerText = 'Password has been copied'
+    clipboardEl.classList.add('clipboard')
+
+
+    setTimeout(function removeText() {
+        clipboardEl.innerHTML = '';
+        clipboardEl.classList.remove('clipboard')
+    }, 1000)
 })
+
+
