@@ -1,0 +1,94 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(117, 228, 228);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: relative;
+  background-color: #fff;
+}
+
+.wrapper p {
+  margin: 0;
+}
+
+canvas {
+  border: 3px solid teal;
+  border-top-left-radius: 5px;
+}
+
+.controls {
+  padding: 0.5rem;
+  background-color: teal;
+  border-bottom-left-radius: 5px;
+}
+
+.control-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+  color: #fff;
+}
+
+.slider {
+  width: 70%;
+}
+
+.control-top .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  cursor: pointer;
+}
+.control-side {
+  height: 100%;
+  background-color: teal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  padding: 0.5rem 0.2rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.color-picker {
+  width: 25px;
+  padding: 0;
+  align-self: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: rgb(22, 73, 73);
+  border-radius: 3rem;
+}
+
+.erase {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
