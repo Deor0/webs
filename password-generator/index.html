@@ -14,23 +14,22 @@
     <script
       src="https://kit.fontawesome.com/cb37a641a5.js"
       crossorigin="anonymous"
+      defer
     ></script>
-    <script src="script.js"></script>
+
     <title>Password Generator</title>
   </head>
   <body>
     <h1>Password Generator</h1>
     <div class="wrapper">
       <div class="pw-header">
-        <div class="pw">
-          hfa9374A9$^&
-          <button><i class="fas fa-clipboard"></i></button>
-        </div>
+        <div class="pw" id="pw"></div>
+        <button id="copy"><i class="fas fa-clipboard"></i></button>
       </div>
       <div class="pw-body">
         <div class="form-control">
           <label for="length">Length</label>
-          <input type="number" id="length" min="4" max="45" />
+          <input type="number" id="length" min="4" max="45" value="4" />
         </div>
         <div class="form-control">
           <label for="upper">Include Uppercase</label>
@@ -51,5 +50,6 @@
       </div>
       <button id="generate">Generate</button>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

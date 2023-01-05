@@ -14,7 +14,7 @@ body {
   font-family: var(--ff-primary);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.2rem;
   justify-content: center;
   align-items: center;
   background-color: teal;
@@ -38,6 +38,7 @@ h1 {
 
 .pw-header {
   padding: 1rem;
+  position: relative;
 }
 
 .pw {
@@ -46,7 +47,6 @@ h1 {
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-size: 1.2rem;
   padding: 0.5rem 0 0.5rem 1rem;
 }
@@ -56,11 +56,16 @@ h1 {
   padding: 1rem;
 }
 
-.pw button {
+#copy {
   border: none;
   background-color: transparent;
-  color: rgb(210, 250, 250);
+  color: #fff;
   font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .form-control {
@@ -71,15 +76,17 @@ h1 {
 #generate {
   width: 100%;
   padding: 1rem 1.2rem;
-  color: #fff;
+  color: #ccc;
   font-size: 1.4rem;
   background-color: teal;
   border: none;
   cursor: pointer;
-  transition: 200ms ease-in;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  transition: 100ms;
 }
 
 #generate:hover {
-  background-color: rgb(19, 44, 44);
-  color: #c3c3c3;
+  color: #fff;
 }
