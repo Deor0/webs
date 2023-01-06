@@ -4,7 +4,8 @@ const ctx = canvas.getContext('2d');
 const sliderVal = document.getElementById('myRange')
 const value = document.getElementById('val')
 
-const color = document.getElementById('color')
+const color = document.getElementById('color');
+const erase = document.getElementById('erase');
 
 let width = canvas.width = 500
 let height = canvas.height = 500
@@ -44,3 +45,8 @@ function drawCircle(x, y) {
 
     ctx.fillStyle = fillColor;
 }
+
+erase.addEventListener('mousedown', () => {
+    ctx.clearRect(0, 0, width, height);
+})
+
